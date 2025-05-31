@@ -1,29 +1,22 @@
 #include <stdio.h>
 
 int main() {
-    int x1, y1, x2, y2, x3, y3, x4, y4;
-
-    scanf("%d %d", &x1, &y1);
-    scanf("%d %d", &x2, &y2);
-    scanf("%d %d", &x3, &y3);
-
-    if (x1 == x2) {
-        x4 = x3;
-    } else if (x1 == x3) {
-        x4 = x2;
-    } else {
-        x4 = x1;
+    int x[3], y[3];
+    
+    for (int i = 0; i < 3; i++) {
+        scanf("%d %d", &x[i], &y[i]);
     }
 
-    if (y1 == y2) {
-        y4 = y3;
-    } else if (y1 == y3) {
-        y4 = y2;
-    } else {
-        y4 = y1;
-    }
+    int result_x, result_y;
 
-    printf("%d %d\n", x4, y4);
+    if (x[0] == x[1]) result_x = x[2];
+    else if (x[0] == x[2]) result_x = x[1];
+    else result_x = x[0];
 
+    if (y[0] == y[1]) result_y = y[2];
+    else if (y[0] == y[2]) result_y = y[1];
+    else result_y = y[0];
+
+    printf("%d %d\n", result_x, result_y);
     return 0;
 }
